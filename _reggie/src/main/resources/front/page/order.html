@@ -115,9 +115,11 @@
                         if(records && Array.isArray(records)){
                             records.forEach(item=>{
                                 let number = 0
-                                item.orderDetails.forEach(ele=>{
-                                    number += ele.number
-                                })
+                                if (item.orderDetails){
+                                    item.orderDetails.forEach(ele=>{
+                                        number += ele.number
+                                    })
+                                }
                                 item.sumNum = number
                             })
                         }
